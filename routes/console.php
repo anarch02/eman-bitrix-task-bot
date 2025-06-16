@@ -22,3 +22,7 @@ Artisan::command('delete-webhook', function(){
 
     $this->info($response);
 })->purpose('Delete the Telegram webhook');
+
+Artisan::command('test', function(){
+    $this->info(route('bitrix.webhook'));
+})->purpose('Delete the Telegram webhook');

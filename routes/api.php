@@ -13,3 +13,7 @@ Route::get('/user', function (Request $request) {
 })->middleware('auth:sanctum');
 
 Route::post("/bot/getupdates/$token", [WebhookController::class, 'index'])->name('webhook');
+
+Route::post('/bitrix/webhook', function(Request $request){
+    Log::info($request);
+})->name('bitrix.webhook');

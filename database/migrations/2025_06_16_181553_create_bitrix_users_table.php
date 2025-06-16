@@ -11,12 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('chats', function (Blueprint $table) {
+        Schema::create('bitrix_users', function (Blueprint $table) {
             $table->id();
-            $table->string('chat_id')->unique();
-            $table->string('username')->nullable();
-            $table->string('first_name')->nullable();
-            $table->string('last_name')->nullable();
+            $table->string('bitrix_id')->unique();
+            $table->string('name')->nullable();
+            $table->string('telegram_id')->nullable()->unique();
             $table->timestamps();
         });
     }
@@ -26,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('chats');
+        Schema::dropIfExists('bitrix_users');
     }
 };
