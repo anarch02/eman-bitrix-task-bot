@@ -1,5 +1,6 @@
 <?php
 
+use App\Services\BitrixService;
 use Illuminate\Foundation\Inspiring;
 use Illuminate\Support\Facades\Artisan;
 use Telegram\Bot\Laravel\Facades\Telegram;
@@ -24,5 +25,6 @@ Artisan::command('delete-webhook', function(){
 })->purpose('Delete the Telegram webhook');
 
 Artisan::command('test', function(){
-    $this->info(route('bitrix.webhook'));
+    // $this->info(route('bitrix.webhook'));
+    BitrixService::getTask(589);
 })->purpose('Delete the Telegram webhook');

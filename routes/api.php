@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Bitrix\HandlerController;
 use App\Http\Controllers\Telegram\WebhookController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
@@ -14,6 +15,7 @@ Route::get('/user', function (Request $request) {
 
 Route::post("/bot/getupdates/$token", [WebhookController::class, 'index'])->name('webhook');
 
-Route::post('/bitrix/webhook', function(Request $request){
-    Log::info($request);
-})->name('bitrix.webhook');
+Route::post('/bitrix/webhook', [HandlerController::class, 'handleWebhook'])->name('bitrix.webhook');
+// Route::post('/bitrix/webhook', function(Request $request){
+//     Log::info($request);
+// })->name('bitrix.webhook');

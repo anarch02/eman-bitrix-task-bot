@@ -35,4 +35,11 @@ return [
         ],
     ],
 
+    'bitrix' => [
+        'webhook_url' => env('BITRIX_WEBHOOK'),
+    ],
+
+    'telegram' => [
+        'bot_token' => env('TELEGRAM_BOT_TOKEN') 
+    ]
 ];
